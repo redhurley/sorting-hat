@@ -110,34 +110,37 @@
                 // Generate a random number and convert it to a string
                 var randomNumber = Math.round(getRandomArbitrary(1, 6)).toString();
 
-                // Declare a variable called house
-                var house = "house";
+                // Declare a variable called houseString that stores the string "house"
+                var houseString = "house";
 
                 // Declare a variable called randomHouse that concatenates "house" with the random number string
-                var randomHouse = house.concat(randomNumber);
+                var randomHouse = houseString.concat(randomNumber);
                 console.log(randomHouse);
 
                 // Push newName to the randomly chosen house/array
-                if (randomHouse = "house1") {
+                if (randomHouse == "house1") {
                     house1.push(newName);
-                    // Update array
+                    // Update and display array
                     displayHouse1.innerHTML = house1;
 
-                } else if (randomHouse = "house2") {
+                } else if (randomHouse == "house2") {
                     house2.push(newName);
-                    // Update array
+                    // Update and display array
                     displayHouse2.innerHTML = house2;
-                } else if (randomHouse = "house3") {
+
+                } else if (randomHouse == "house3") {
                     house3.push(newName);
-                    // Update array
+                    // Update and display array
                     displayHouse3.innerHTML = house3;
-                } else if (randomHouse = "house4") {
+
+                } else if (randomHouse == "house4") {
                     house4.push(newName);
-                    // Update array
+                    // Update and display array
                     displayHouse4.innerHTML = house4;
+
                 } else {
                     house5.push(newName);
-                    // Update array
+                    // Update and display array
                     displayHouse5.innerHTML = house5;
                 }
                 
