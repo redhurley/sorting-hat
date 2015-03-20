@@ -61,11 +61,10 @@
         //Javascript goes here, and runs when the page loads.
         var studentCount = 0;
         var button = document.getElementById("set_student_count");
+        // Create a variable that will store the div object where we will display 
+        //  the student count by using document.getElementById("count")
+        var displayCount = document.getElementById("count");
         document.getElementById("set_student_count").addEventListener("click", function() {
-            // Create a variable that will store the div object where we will display 
-            //  the student count by using document.getElementById("count")
-            var displayCount = document.getElementById("count");
-
             // Create a variable to store what the user entered into the text input field.
             //    You can use document.getElementbyId("student_count").value
             //    If the field is empty (or not a number), set it to 0.
@@ -87,6 +86,19 @@
             }
         });
 
+        function getRandomHouse(min, max) {
+                // Generate a random number btwn 1 and 5, round it to nearest integer, then convert it to a string
+                var randomNumber = Math.round(Math.random() * (max - min) + min).toString();
+
+                // Declare a variable called houseString that stores the string "house"
+                var houseString = "house";
+
+                // Declare a variable called randomHouse that concatenates "house" with the random number string
+                var randomHouse = houseString.concat(randomNumber);
+
+                return randomHouse;
+            }
+
         var house1 = [];
         var house2 = [];
         var house3 = [];
@@ -107,57 +119,70 @@
                 var displayHouse4 = document.getElementById("Slytherin");
                 var displayHouse5 = document.getElementById("Dumbledore");
 
-                // Generate a random number and convert it to a string
-                var randomNumber = Math.round(getRandomArbitrary(1, 6)).toString();
+                // Get a random house
+                var aRandomHouse = getRandomHouse(1, 5);
 
-                // Declare a variable called houseString that stores the string "house"
-                var houseString = "house";
+                // Declare a variable that stores the number of houses
+                var numberOfHouses = document.getElementsByClassName("house").length;
+                console.log(numberOfHouses);
 
-                // Declare a variable called randomHouse that concatenates "house" with the random number string
-                var randomHouse = houseString.concat(randomNumber);
-                console.log(randomHouse);
-
-                // Push newName to the randomly chosen house/array
-                if (randomHouse == "house1") {
+                // Check that the array randomHouse represents has less than the # of students we're sorting divided by # of houses
+                if (aRandomHouse == "house1" && house1 < studentCount / numberOfHouses) {
+                    // Push newName to the randomly chosen house/array
                     house1.push(newName);
                     // Update and display array
                     displayHouse1.innerHTML = house1;
+                    // Decrement studentCount by 1
+                    studentCount--;
+                    // Reload studentCount display
+                    displayCount.innerHTML = studentCount;
 
-                } else if (randomHouse == "house2") {
+                } else if (aRandomHouse == "house2" && house2 < studentCount / numberOfHouses) {
                     house2.push(newName);
                     // Update and display array
                     displayHouse2.innerHTML = house2;
+                    // Decrement studentCount by 1
+                    studentCount--;
+                    // Reload studentCount display
+                    displayCount.innerHTML = studentCount;
 
-                } else if (randomHouse == "house3") {
+                } else if (aRandomHouse == "house3" && house3 < studentCount / numberOfHouses) {
                     house3.push(newName);
                     // Update and display array
                     displayHouse3.innerHTML = house3;
+                    // Decrement studentCount by 1
+                    studentCount--;
+                    // Reload studentCount display
+                    displayCount.innerHTML = studentCount;
 
-                } else if (randomHouse == "house4") {
+                } else if (aRandomHouse == "house4" && house4 < studentCount / numberOfHouses) {
                     house4.push(newName);
                     // Update and display array
                     displayHouse4.innerHTML = house4;
+                    // Decrement studentCount by 1
+                    studentCount--;
+                    // Reload studentCount display
+                    displayCount.innerHTML = studentCount;
 
-                } else {
+                } else if (aRandomHouse == "house5" && house5 < studentCount / numberOfHouses) {
                     house5.push(newName);
                     // Update and display array
                     displayHouse5.innerHTML = house5;
+                    // Decrement studentCount by 1
+                    studentCount--;
+                    // Reload studentCount display
+                    displayCount.innerHTML = studentCount;
+
+                // Or else, go back and regenerate randomHouse
+                } else {
+                    // TODO: recursion? calllback?
+
                 }
-                
-                console.log(house1);
-                console.log(house2);
-                console.log(house3);
-                console.log(house4);
-                console.log(house5);
 
                 // Reset the input field ("student_name")
                 document.getElementById("student_name").value = "";
             }
         });
-
-        function getRandomArbitrary(min, max) {
-            return Math.random() * (max - min) + min;
-        }
     </script>
   </body>
 </html>
