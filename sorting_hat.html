@@ -17,25 +17,95 @@
     <h1>Sorting Hat</h1>
     
     <div class="container">
-        <div class="house col-md-2">
+        <div class="house1 col-md-2">
             Gryffindor
         </div>
-        <div class="house col-md-2">
+        <div class="house2 col-md-2">
             Hufflepuff
         </div>
-        <div class="house col-md-2">
+        <div class="house3 col-md-2">
             Ravenclaw
         </div>
-        <div class="house col-md-2">
+        <div class="house4 col-md-2">
             Slytherin
         </div>
-        <div class="house col-md-2">
+        <div class="house5 col-md-2">
             Dumbledore's Army
         </div>
     </div>
+    <br>
+    <div class="form" align="middle">
+        <input type="number" id="student_count">  
+        <button id="set_student_count">Set Student Count</button>  
+        <div id="count"> <!--something to go here--> </div>
+    </div>
+
+    <div class="form" align="middle">
+        <input type="text" id="student_name">  
+        <button id="set_student_name">Add Name</button>  
+        <div id="nameField"> <!--something to go here--> </div>
+    </div>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
+    
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        //Javascript goes here, and runs when the page loads.
+        var studentCount = 0;
+        var button = document.getElementById("set_student_count");
+        document.getElementById("set_student_count").addEventListener("click", function() {
+            // Create a variable that will store the div object where we will display 
+            //  the student count by using document.getElementById("count")
+            var displayCount = document.getElementById("count");
+
+            // Create a variable to store what the user entered into the text input field.
+            //    You can use document.getElementbyId("student_count").value
+            //    If the field is empty (or not a number), set it to 0.
+            var setCount = document.getElementById("student_count").value;
+            if (setCount) {
+                // Add the user entered value to studentCount (the global variable we set
+                //    up earlier in Step 2).
+                studentCount += Number(setCount);
+
+                // Display the new value of studentCount in the div object (the "count" 
+                //    div) we saved ealier.  Use the .innerHTML property to update the
+                //    contents of the div
+                displayCount.innerHTML = studentCount;
+
+                // Reset the input field (student_count) changing the .value attribute to 0
+                document.getElementById("student_count").value = 0;
+            } else {
+                setCount = 0;
+            }
+        });
+
+        var namesArray = [];
+        document.getElementById("set_student_name").addEventListener("click", function() {
+            // // Store div object where we display name
+            // var displayName = document.getElementById("nameField");
+
+            // Store entered name
+            var newName = document.getElementById("student_name").value;
+
+            if (newName) {
+                // 
+                // Add entered name to names array
+                namesArray.push(newName);
+
+                // Display new names array
+                document.getElementById("nameField").innerHTML = namesArray;
+
+                // Reset the input field ("student_name")
+                document.getElementById("student_name").value = "";
+            }
+        });
+
+        function getRandomArbitrary(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+    </script>
   </body>
 </html>
