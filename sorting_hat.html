@@ -62,11 +62,11 @@
     <script type="text/javascript">
         //Javascript goes here, and runs when the page loads.
         var studentCount = 0;
-        var button = document.getElementById("set_student_count");
+        var countButton = document.getElementById("set_student_count");
         // Create a variable that will store the div object where we will display 
         //  the student count by using document.getElementById("count")
         var displayCount = document.getElementById("count");
-        document.getElementById("set_student_count").addEventListener("click", function() {
+        countButton.addEventListener("click", function() {
             // Create a variable to store what the user entered into the text input field.
             //    You can use document.getElementbyId("student_count").value
             //    If the field is empty (or not a number), set it to 0.
@@ -111,7 +111,8 @@
         var slytherin = [];
         var dumbledore = [];
 
-        document.getElementById("set_student_name").addEventListener("click", function() {
+        var nameButton = document.getElementById("set_student_name");
+        nameButton.addEventListener("click", function() {
             assignRandomHouse();
         });
 
@@ -179,10 +180,8 @@
                         displayMessage.innerHTML = "Sorry, all houses are full. Good luck traversing Hogwarts ALONE!";
                     }
                 }
-
                 // Reset the input field ("student_name")
                 document.getElementById("student_name").value = "";
-
             }
         }
 
