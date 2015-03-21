@@ -130,7 +130,8 @@
                 var i = pickRandomHouse();
 
                 // Check to see if that house is full
-                if (i == "gryffindor" && gryffindor < numberOfHouses) {
+                var capacity = studentCount / numberOfHouses;
+                if (i == "gryffindor" && gryffindor < capacity) {
                     // If not, add name entered to the house
                     gryffindor.push(newName);
                     // ...then reload/display the new list of names for that house
@@ -140,25 +141,25 @@
                     // Reload/display the new studentCount
                     displayCount.innerHTML = studentCount;
 
-                } else if (i == "hufflepuff" && hufflepuff < numberOfHouses) {
+                } else if (i == "hufflepuff" && hufflepuff < capacity) {
                     hufflepuff.push(newName);
                     displayHufflepuff.innerHTML = hufflepuff;
                     studentCount--;
                     displayCount.innerHTML = studentCount;
 
-                } else if (i == "ravenclaw" && ravenclaw < numberOfHouses) {
+                } else if (i == "ravenclaw" && ravenclaw < capacity) {
                     ravenclaw.push(newName);
                     displayRavenclaw.innerHTML = ravenclaw;
                     studentCount--;
                     displayCount.innerHTML = studentCount;
 
-                } else if (i == "slytherin" && slytherin < numberOfHouses) {
+                } else if (i == "slytherin" && slytherin < capacity) {
                     slytherin.push(newName);
                     displaySlytherin.innerHTML = slytherin;
                     studentCount--;
                     displayCount.innerHTML = studentCount;
 
-                } else if (i == "dumbledore" && dumbledore < numberOfHouses) {
+                } else if (i == "dumbledore" && dumbledore < capacity) {
                     dumbledore.push(newName);
                     displayDumbledore.innerHTML = dumbledore;
                     studentCount--;
