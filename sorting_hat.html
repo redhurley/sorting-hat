@@ -50,6 +50,8 @@
         <button id="set_student_name">Add Name</button>  
         <div id="nameField"> <!--something to go here--> </div>
     </div>
+    <br>
+    <div id="message" align="middle"> <!--something to go here--> </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
@@ -166,8 +168,17 @@
                     displayCount.innerHTML = studentCount;
 
                 } else {
-                    // If full, then pick another house at random
-                    assignRandomHouse();
+                    // If there's still at least one house that's not full
+                    if (gryffindor < capacity || hufflepuff < capacity || ravenclaw < capacity || slytherin < capacity || dumbledore < capacity) {
+                        // then pick another house at random
+                        assignRandomHouse();
+
+                    // Or else, return message saying "Sorry, all houses are full"
+                    } else {
+                        // Store div object where we'll display a message
+                        var displayMessage = document.getElementById("message"); 
+                        displayMessage.innerHTML = "Sorry, all houses are full. Good luck traversing Hogwarts ALONE!";
+                    }
                 }
 
                 // Reset the input field ("student_name")
