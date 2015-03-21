@@ -88,7 +88,6 @@
             }
         });
 
-        
 
         // Sort students into houses //
 
@@ -186,103 +185,11 @@
 
             }
         }
-        
-
-        
-
-
-        
-
-        
-
-
-
-
-
-        // Take the value from the student name input field
-
-        // Pick a house at random (probably keep these in some array or... object?)
-        
-        // Check to see if the house is "full". Full means that the house has less than the number of students we're sorting divided by the number of houses. Yes, that does mean you'll need to keep track of who is in each house. (Protip: document.getElementsByClassName() will help you here )
-        
-        // If the house is full, make sure you pick a new house, and do the same checks.
-        
-        // Put the student into the house you picked, by displaying the student's name inside the house
-        
-        // Decrement the count of students from the count div.
-
-        // 
-
-
-
-
-   
-
-        // function assignToHouse(dog) {
-        //     // Get a random house
-        //     var aRandomHouse = getRandomHouse(1, 5);
-
-        //     // Check that aRandomHouse array has less than the # of students we're sorting divided by # of houses
-        //     if (aRandomHouse == "house1" && house1 < studentCount / numberOfHouses) {
-        //         // Push newName to the randomly chosen house/array
-        //         house1.push(dog);
-        //         // Update and display array
-        //         displayHouse1.innerHTML = house1;
-        //         // Decrement studentCount by 1
-        //         studentCount--;
-        //         // Reload studentCount display
-        //         displayCount.innerHTML = studentCount;
-
-        //     } else if (aRandomHouse == "house2" && house2 < studentCount / numberOfHouses) {
-        //         house2.push(dog);
-        //         displayHouse2.innerHTML = house2;
-        //         studentCount--;
-        //         displayCount.innerHTML = studentCount;
-
-        //     } else if (aRandomHouse == "house3" && house3 < studentCount / numberOfHouses) {
-        //         house3.push(dog);
-        //         displayHouse3.innerHTML = house3;
-        //         studentCount--;
-        //         displayCount.innerHTML = studentCount;
-
-        //     } else if (aRandomHouse == "house4" && house4 < studentCount / numberOfHouses) {
-        //         house4.push(dog);
-        //         displayHouse4.innerHTML = house4;
-        //         studentCount--;
-        //         displayCount.innerHTML = studentCount;
-
-        //     } else if (aRandomHouse == "house5" && house5 < studentCount / numberOfHouses) {
-        //         house5.push(dog);
-        //         displayHouse5.innerHTML = house5;
-        //         studentCount--;
-        //         displayCount.innerHTML = studentCount;
-
-        //     // Or else, go back and regenerate randomHouse
-        //     } else {
-        //         console.log("test");
-        //         assignToHouse(aRandomHouse);
-        //     }
-
-        //     console.log(house1);
-        //     console.log(house2);
-        //     console.log(house3);
-        //     console.log(house4);
-        //     console.log(house5);
-
-        // }
 
         function randomNumber(min, max) {
             // Generate a random number btwn 1 and 5, round it to nearest integer, then convert it to a string
             var num = Math.round(Math.random() * (max - min) + min);
             return num;
-
-            // // Declare a variable called houseString that stores the string "house"
-            // var houseString = "house";
-
-            // // Declare a variable called randomHouse that concatenates "house" with the random number string
-            // var randomHouse = houseString.concat(randomNumber);
-
-            // return randomHouse;
         }
     </script>
   </body>
